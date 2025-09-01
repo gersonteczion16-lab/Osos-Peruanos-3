@@ -55,10 +55,10 @@ def Listar_P():
     baseDeDatos.close()
     return datos
 
-   if __name__ == "__main__":
+if __name__ == "__main__":
      conectar()
      Agregar_P("Perro", "Animal doméstico conocido como el mejor amigo del hombre.")
-        print("Palabra Aleatoria:", Obtener_P_A())
+     print("Palabra Aleatoria:", Obtener_P_A())
 
 
 
