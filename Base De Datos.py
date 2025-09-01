@@ -28,7 +28,16 @@ def Agregar_P( palabra,descripcion ):
     cursor.execute("INSERT INTO palabras (palabra, descripcion) VALUES (?, ?)", (palabra.lower(), descripcion))
  baseDeDatos.commit()
  baseDeDatos.close()
-print("Palabra Agregada :)")
+ print("Palabra Agregada :)")
+
+def Eliminar_P(palabra):
+    baseDeDatos = sqlite3.connect("palabras.db")
+    cursor = baseDeDatos.cursor()
+
+    cursor.execute("DELETE FROM palabras WHEN palabra = ?",(palabra.lower()))
+    baseDeDatos.commit()
+    baseDeDatos.close()
+    print("La palabra fue eliminada")
 
 
 
