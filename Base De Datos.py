@@ -34,7 +34,7 @@ def Eliminar_P(palabra):
     baseDeDatos = sqlite3.connect("palabras.db")
     cursor = baseDeDatos.cursor()
 
-    cursor.execute("DELETE FROM palabras WHEN palabra = ?",(palabra.lower()))
+    cursor.execute("DELETE FROM palabras WHERE palabra = ?",(palabra.lower()))
     baseDeDatos.commit()
     baseDeDatos.close()
     print("La palabra fue eliminada")
