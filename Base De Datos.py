@@ -39,6 +39,14 @@ def Eliminar_P(palabra):
     baseDeDatos.close()
     print("La palabra fue eliminada")
 
+def Obtener_P_A():
+    baseDeDatos = sqlite3.connect("palabras.db")
+    cursor = baseDeDatos.cursor()
+    cursor.execute("SELECT palabra,descripcion FROM palabras ORDER BY RANDOM()LIMIT 1")
+    Resultado = cursor.fetchone()
+    baseDeDatos.close()
+    return Resultado
+
 
 
 
