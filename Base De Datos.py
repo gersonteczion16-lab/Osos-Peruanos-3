@@ -1,6 +1,6 @@
 import sqlite3
 
-def Conectar():
+def conectar():
     baseDeDatos = sqlite3.connect("palabras.db")
     cursor =  baseDeDatos.cursor()
     cursor.execute('''
