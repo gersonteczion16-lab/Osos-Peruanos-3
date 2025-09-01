@@ -47,6 +47,14 @@ def Obtener_P_A():
     baseDeDatos.close()
     return Resultado
 
+def Listar_P():
+    baseDeDatos = sqlite3.connect("palabras.db")
+    cursor = baseDeDatos.cursor()
+    cursor.execute("SELECT palabra,descripcion FROM palabras")
+    datos = cursor.fetchall()
+    baseDeDatos.close()
+    return datos
+
 
 
 
